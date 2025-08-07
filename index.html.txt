@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Screen Golf Export Solutions</title>
+  <style>
+    body { font-family: 'Noto Sans', Arial, sans-serif; margin:0; background:#f4f6fb;}
+    header { background:#18468b; color:#fff; padding:40px 20px;}
+    .container { max-width:900px; margin:0 auto; padding:40px 20px;}
+    h1,h2 { margin:0 0 15px 0;}
+    .cta { background:#ffa600; color:#222; padding:15px 35px; border:none; border-radius:5px; font-size:1.2em; cursor:pointer; transition:.2s;}
+    .cta:hover { background:#d98b02;}
+    .feature-list { display:flex; gap:30px; flex-wrap:wrap;}
+    .feature { background:#fff; padding:15px 20px; border-radius:8px; box-shadow: 0 2px 8px #cacbcc; flex:1; min-width:200px;}
+    .form-section { background:#fff; padding:25px 30px; border-radius:10px; box-shadow:0 2px 10px #e3e6ee; margin-top:40px;}
+    label { font-weight:500; display:block; margin:12px 0 6px; }
+    input, textarea { width:100%; padding:12px; border:1px solid #b8bfcc; border-radius:4px; margin-bottom:10px;}
+    textarea { min-height:90px; }
+    .submit-btn { background:#18468b; color:white; border:none; border-radius:4px; padding: 12px 24px; font-size: 1em; cursor:pointer;}
+    .submit-btn:hover { background:#112c54;}
+    footer { background:#242533; color:#d8dae7; text-align:center; padding:20px 0; margin-top:40px;}
+    @media (max-width: 700px) {
+      .feature-list { flex-direction:column; gap:20px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Screen Golf Export Solutions</h1>
+    <p>Leading Korean Screen Golf Systems for Global Markets</p>
+    <button class="cta" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact Us</button>
+  </header>
+  <div class="container">
+    <h2>Why Choose Our Screen Golf Systems?</h2>
+    <div class="feature-list">
+      <div class="feature">
+        <h3>Advanced Technology</h3>
+        <p>Realistic simulation with precision sensors and 3D graphics - trusted by golf lovers worldwide.</p>
+      </div>
+      <div class="feature">
+        <h3>Easy Global Integration</h3>
+        <p>Multilingual support, simple installation, and robust maintenance for international clients.</p>
+      </div>
+      <div class="feature">
+        <h3>Worldwide Export Experience</h3>
+        <p>Over 100 export cases in 30+ countries. Reliable delivery and after-sales support.</p>
+      </div>
+    </div>
+    <h2 id="contact">Contact Us</h2>
+    <div class="form-section">
+      <form method="POST" action="#">
+        <!-- 실제 운영 시 action, method, 스팸방지 등 구현 필요 -->
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="company">Company Name</label>
+        <input type="text" id="company" name="company">
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="country">Country</label>
+        <input type="text" id="country" name="country" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required placeholder="Please write your inquiry or request."></textarea>
+
+        <button type="submit" class="submit-btn">Send Inquiry</button>
+      </form>
+      <p style="font-size:0.9em; color:#666; margin-top:10px;">* We respond within 1 business day.</p>
+    </div>
+  </div>
+  <footer>
+    &copy; 2024 Screen Golf Export | info@screengolfexport.com | +82-2-1234-5678
+  </footer>
+</body>
+</html>
