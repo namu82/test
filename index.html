@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Screen Golf Export Solutions</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+    body {
+      margin: 0; 
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f0f4ff 0%, #d9e2ff 100%);
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: rgba(24, 70, 139, 0.85);
+      color: #fff;
+      padding: 80px 20px 60px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    header p {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      color: #cdd6ff;
+    }
+    header .cta-btn {
+      background: #ffa600;
+      color: #1a1a1a;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding: 15px 50px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 8px 15px rgba(255,166,0,0.4);
+      transition: all 0.3s ease;
+    }
+    header .cta-btn:hover {
+      background: #ffb933;
+      box-shadow: 0 10px 20px rgba(255,185,66,0.7);
+      transform: translateY(-3px);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: -60px auto 40px;
+      padding: 0 20px;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      position: relative;
+      z-index: 10;
+    }
+
+    section.features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      padding: 60px 40px 40px;
+    }
+    .feature-card {
+      background: rgba(255,255,255,0.75);
+      border-radius: 20px;
+      padding: 25px 30px;
+      box-shadow: 0 8px 24px rgba(24, 70, 139, 0.15);
+      backdrop-filter: saturate(180%) blur(18px);
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 32px rgba(24, 70, 139, 0.25);
+    }
+    .feature-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #18468b;
+    }
+    .feature-card p {
+      font-size: 1rem;
+      color: #444;
+    }
+
+    section.gallery {
+      padding: 40px 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    section.gallery img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(24, 70, 139, 0.2);
+      object-fit: cover;
+      aspect-ratio: 4 / 3;
+      cursor: pointer;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    section.gallery img:hover {
+      transform: scale(1.07);
+      box-shadow: 0 12px 40px rgba(24, 70, 139, 0.35);
+    }
+
+    section.contact {
+      background: #18468b;
+      color: white;
+      padding: 60px 40px 80px;
+      border-radius: 0 0 18px 18px;
+      text-align: center;
+    }
+    section.contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+    }
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    label {
+      display: block;
+      margin: 15px 0 6px;
+      font-weight: 600;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      resize: vertical;
+      transition: box-shadow 0.3s ease;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 0 8px #ffa600;
+    }
+    textarea {
+      min-height: 120px;
+    }
+    button.submit-btn {
+      margin-top: 25px;
+      background: #ffa600;
+      color: #18468b;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding: 15px 50px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 8px 15px rgba(255,166,0,0.5);
+      transition: all 0.3s ease;
+      display: block;
+      width: 100%;
+    }
+    button.submit-btn:hover {
+      background: #ffb933;
+      box-shadow: 0 12px 22px rgba(255,185,66,0.8);
+      transform: translateY(-3px);
+    }
+    .form-info {
+      font-size: 0.9rem;
+      margin-top: 12px;
+      text-align: center;
+      color: #ffd966;
+    }
+
+    footer {
+      text-align: center;
+      padding: 18px 10px;
+      font-size: 0.9rem;
+      color: #666;
+      background: #f0f4ff;
+      margin-top: 40px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.3rem;
+      }
+      section.features {
+        padding: 30px 20px 20px;
+        grid-template-columns: 1fr;
+      }
+      section.gallery {
+        grid-template-columns: 1fr 1fr;
+        padding: 30px 20px;
+      }
+      section.contact {
+        padding: 40px 20px 60px;
+      }
+      form {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Screen Golf Export Solutions</h1>
+    <p>Leading Korean Screen Golf Systems for Global Markets</p>
+    <button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact Us</button>
+  </header>
+
+  <main>
+    <section class="features" aria-label="Key Features">
+      <div class="feature-card">
+        <h3>Advanced Technology</h3>
+        <p>Precision sensors and 3D graphics create immersive and realistic golf simulations trusted worldwide.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Easy Global Integration</h3>
+        <p>Multilingual support, simple installation, and robust maintenance tailored for international markets.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Worldwide Export Experience</h3>
+        <p>Over 100 successful exports to more than 30 countries with reliable delivery and after-sales service.</p>
+      </div>
+    </section>
+
+    <section class="gallery" aria-label="Product Image Gallery">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Screen Golf System 1" />
+      <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=800&q=80" alt="Screen Golf System 2" />
+      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=800&q=80" alt="Screen Golf System 3" />
+      <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=800&q=80" alt="Screen Golf System 4" />
+      <img src="https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=800&q=80" alt="Screen Golf System 5" />
+    </section>
+
+    <section class="contact" id="contact" aria-label="Contact Form Section">
+      <h2>Contact Us</h2>
+      <form method="POST" action="#">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="John Doe" />
+
+        <label for="company">Company Name</label>
+        <input type="text" id="company" name="company" placeholder="Your company name" />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="example@company.com" />
+
+        <label for="country">Country</label>
+        <input type="text" id="country" name="country" required placeholder="Country" />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required placeholder="Please write your inquiry or request."></textarea>
+
+        <button type="submit" class="submit-btn">Send Inquiry</button>
+      </form>
+      <p class="form-info">* We respond within 1 business day.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Screen Golf Export | info@screengolfexport.com | +82-2-1234-5678
+  </footer>
+</body>
+</html>
